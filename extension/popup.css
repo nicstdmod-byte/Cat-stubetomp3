@@ -1,0 +1,54 @@
+body { width: 400px; }
+
+.message { padding: 18px 14px; }
+.message p { margin: 0 0 10px; white-space: pre-line; }
+.message ol { margin: 0 0 10px; padding-left: 18px; }
+.message code { background: var(--bg-soft); padding: 1px 4px; border-radius: 4px; }
+
+.list-head {
+  padding: 10px 12px 8px;
+  border-bottom: 1px solid var(--border);
+  display: grid;
+  gap: 6px;
+}
+.playlist-title { font-weight: 600; font-size: 14px; }
+.select-all { display: flex; align-items: center; gap: 6px; cursor: pointer; user-select: none; }
+
+.songs {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-height: 300px;
+  overflow-y: auto;
+}
+.songs li {
+  display: grid;
+  grid-template-columns: auto 26px 1fr auto;
+  align-items: center;
+  gap: 6px;
+  padding: 5px 12px;
+  border-bottom: 1px solid var(--border);
+  user-select: none;
+}
+.songs li.off { opacity: 0.45; }
+.songs .num { color: var(--muted); font-variant-numeric: tabular-nums; text-align: right; }
+.songs .name { overflow: hidden; }
+.songs .name div { white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.songs .name .file { color: var(--muted); font-size: 11px; }
+.songs .state { font-size: 11px; white-space: nowrap; }
+
+#job-list li { grid-template-columns: 26px 1fr auto; }
+
+.footer { padding: 10px 12px; display: grid; gap: 8px; }
+.footer .row { display: flex; align-items: center; gap: 8px; }
+.footer .label { width: 50px; color: var(--muted); }
+.footer .folder {
+  flex: 1;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  direction: rtl;
+  text-align: left;
+}
+.footer.actions { display: flex; justify-content: flex-end; }
+.wide { width: 100%; padding: 8px; }

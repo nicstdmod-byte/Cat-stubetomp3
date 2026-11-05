@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Cat'sTube2Mp3",
+  "version": "1.0.0",
+  "description": "Download songs from YouTube playlists as MP3 files.",
+  "permissions": [
+    "nativeMessaging",
+    "storage",
+    "activeTab"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Cat'sTube2Mp3",
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "32": "icons/icon-32.png",
+      "48": "icons/icon-48.png"
+    }
+  },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": true
+  },
+  "icons": {
+    "16": "icons/icon-16.png",
+    "32": "icons/icon-32.png",
+    "48": "icons/icon-48.png",
+    "96": "icons/icon-96.png",
+    "128": "icons/icon-128.png"
+  },
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAoxZf3esCqEFb0n5ddoNGpuFx70+MKDXyVvYX4BHYArfM2cHUdJHzCPfeTEABpL8EHdTv1A/YUl+krepbUykWkaXMr2vF734C1XGknrjfoYzWWVyJD/+lKc9SDrMxf/h7US5h8pZ6dDHBBxgaj+suFbc8+hH/HiDiOK5qfaTBT22U89/stRMagcvU/6KP/FC7LhDf3BQ4xGEmkk5/jdKtB/e5GYipB3lYyXBNbDqjhnOaNzCNa/eiUM4rVdWPob1vEHz5BhOSrzNpp2CKvgTEQG1JKnLOKY7d4Hd83KS2KyJ1jHBimq5m0PgRnAkmjvqDfC+VN0URhD8kzaKTxEF8CQIDAQAB"
+}

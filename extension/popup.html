@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Cat'sTube2Mp3</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon-48.png" alt="">
+    <h1>Cat'sTube2Mp3</h1>
+    <button id="open-settings" class="link" title="Settings">⚙ Settings</button>
+  </header>
+
+  <!-- Loading, errors and "helper not installed" -->
+  <section id="view-message" class="message">
+    <p id="message-text">Loading…</p>
+    <div id="message-actions"></div>
+  </section>
+
+  <!-- Song picker -->
+  <section id="view-list" class="hidden">
+    <div class="list-head">
+      <div id="playlist-title" class="playlist-title"></div>
+      <label class="select-all">
+        <input type="checkbox" id="select-all"> Select all
+        <span id="select-count" class="muted"></span>
+      </label>
+    </div>
+    <ul id="song-list" class="songs"></ul>
+    <div class="footer">
+      <div class="row">
+        <span class="label">Quality</span>
+        <select id="quality">
+          <option value="128">128 kbps</option>
+          <option value="192">192 kbps</option>
+          <option value="320">320 kbps</option>
+        </select>
+      </div>
+      <div class="row">
+        <span class="label">Folder</span>
+        <span id="folder" class="folder" title=""></span>
+        <button id="change-folder" class="link">Change</button>
+      </div>
+      <button id="download" class="primary wide" disabled>Download</button>
+    </div>
+  </section>
+
+  <!-- Download progress -->
+  <section id="view-progress" class="hidden">
+    <div class="list-head">
+      <div id="job-title" class="playlist-title"></div>
+      <div class="bar"><div id="job-bar"></div></div>
+      <div id="job-summary" class="muted"></div>
+    </div>
+    <ul id="job-list" class="songs"></ul>
+    <div class="footer actions">
+      <button id="cancel">Cancel</button>
+      <button id="open-folder">Open folder</button>
+      <button id="back" class="primary hidden">Done</button>
+    </div>
+  </section>
+
+  <script src="common.js"></script>
+  <script src="popup.js"></script>
+</body>
+</html>

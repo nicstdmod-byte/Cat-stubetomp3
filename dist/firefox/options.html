@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cat'sTube2Mp3 Settings</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="options.css">
+</head>
+<body>
+  <header>
+    <img src="icons/icon-48.png" alt="">
+    <h1>Cat'sTube2Mp3 Settings</h1>
+    <span id="saved" class="muted saved">Saved ✓</span>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Save location</h2>
+      <div class="field">
+        <label>Main folder</label>
+        <div class="inline">
+          <input type="text" id="baseFolder" class="grow" spellcheck="false">
+          <button id="browse">Browse…</button>
+          <button id="reset-folder" class="link">Use default</button>
+        </div>
+        <p class="hint">Leave empty to use your Music folder.</p>
+      </div>
+      <div class="field">
+        <label for="subfolderPreset">Subfolder for each playlist</label>
+        <div class="inline">
+          <select id="subfolderPreset">
+            <option value="{playlist}">Playlist name</option>
+            <option value="{channel}">Playlist owner's channel</option>
+            <option value="{channel}/{playlist}">Channel / Playlist</option>
+            <option value="">No subfolder</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input type="text" id="subfolderPattern" class="grow hidden" spellcheck="false">
+        </div>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>File names</h2>
+      <div class="field">
+        <label for="namePreset">Name pattern</label>
+        <div class="inline">
+          <select id="namePreset">
+            <option value="{artist} - {title}">{artist} - {title}</option>
+            <option value="{title}">{title}</option>
+            <option value="{track} - {title}">{track} - {title}</option>
+            <option value="{track} - {artist} - {title}">{track} - {artist} - {title}</option>
+            <option value="custom">Custom…</option>
+          </select>
+          <input type="text" id="namePattern" class="grow hidden" spellcheck="false">
+        </div>
+        <p class="hint">
+          You can use: <code>{title}</code> <code>{artist}</code> <code>{track}</code> <code>{playlist}</code>
+          <code>{channel}</code> <code>{date}</code> <code>{id}</code>
+        </p>
+      </div>
+      <div class="preview">
+        <div class="muted">Preview</div>
+        <div id="preview-folder" class="preview-folder"></div>
+        <ul id="preview-list"></ul>
+      </div>
+      <label class="check"><input type="checkbox" id="cleanJunk"> Remove “(Official Video)”, “[Lyrics]”, “(Audio)” and similar from titles</label>
+      <div class="field">
+        <label>If a different file with the same name already exists</label>
+        <label class="check"><input type="radio" name="onExisting" value="number"> Save as “Name (2).mp3”</label>
+        <label class="check"><input type="radio" name="onExisting" value="skip"> Skip the song</label>
+      </div>
+    </section>
+
+    <section class="card">
+      <h2>Audio</h2>
+      <div class="field">
+        <label for="quality">Default MP3 quality</label>
+        <select id="quality">
+          <option value="128">128 kbps (smaller files)</option>
+          <option value="192">192 kbps (recommended)</option>
+          <option value="320">320 kbps (best)</option>
+        </select>
+      </div>
+      <label class="check"><input type="checkbox" id="embedMetadata"> Add song info (title, artist, album, track number)</label>
+      <label class="check"><input type="checkbox" id="embedThumbnail"> Add cover art from the video thumbnail</label>
+    </section>
+
+    <section class="card">
+      <h2>Helper</h2>
+      <div id="helper-status" class="helper-status muted">Checking…</div>
+      <div class="inline">
+        <button id="recheck">Check again</button>
+        <button id="update-ytdlp">Update yt-dlp</button>
+        <span id="update-result" class="muted"></span>
+      </div>
+      <p class="hint">YouTube changes often. If downloads start failing, click “Update yt-dlp” first.</p>
+    </section>
+  </main>
+
+  <script src="common.js"></script>
+  <script src="options.js"></script>
+</body>
+</html>
