@@ -35,7 +35,7 @@ The helper is plain, readable Python. On Windows the installer uses the official
 
 **👉 Full step-by-step guide: [INSTALL.md](INSTALL.md)** (Windows and Linux, Firefox and Chrome)
 
-Quick version:
+Quick version: (instruction might not clear, best to follow as shows on ISTALL.md)
 
 1. **Helper:** Windows: double-click `install/install.bat`. Linux: `sudo apt install ffmpeg python3-venv`,
    then `./install/install.sh`.
